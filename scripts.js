@@ -378,9 +378,14 @@ suits.forEach((suit) => {
     <h3>${suit.name}</h3>
     <p class="price">${suit.price}</p>
     <p class="description">${suit.desc}</p>
-    <a class="order-btn" href="${suit.contact === 'telegram' ? telegramLink : whatsappLink}" target="_blank">
-      Order on ${suit.contact === 'telegram' ? 'Telegram' : 'WhatsApp'}
-    </a>
+    <a class="order-btn" href="#" onclick="orderProduct('${suit.name}', '${suit.image}')">
+  Order on Telegram
+</a>
   `;
   container.appendChild(card);
+  
+  function orderProduct(productName, imageUrl) {
+    const tg = window.Telegram.WebApp;
+    tg.sendData(JSON.stringify({ name: productName, image: imageUrl }));
+  }  
 });
