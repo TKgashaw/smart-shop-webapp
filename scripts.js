@@ -1,3 +1,6 @@
+src="https://telegram.org/js/telegram-web-app.js"
+const tg = window.Telegram.WebApp;
+    tg.expand();
 const suits = [
     {
       name: "Modern Navy Slim Suit",
@@ -366,8 +369,8 @@ const suits = [
   },
 ];
 
-const telegramLink = "https://t.me/YourTelegramUsername";
-const whatsappLink = "https://wa.me/YourPhoneNumber";
+const telegramLink = "https://t.me/TKgashaw1";
+const whatsappLink = "https://wa.me/0909690135";
 const container = document.getElementById("product-container");
 
 suits.forEach((suit) => {
@@ -383,7 +386,7 @@ suits.forEach((suit) => {
 </a>
   `;
   container.appendChild(card);
-  
+
   function orderProduct(productName, imageUrl) {
     const tg = window.Telegram.WebApp;
     tg.sendData(JSON.stringify({ name: productName, image: imageUrl }));
